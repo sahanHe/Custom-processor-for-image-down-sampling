@@ -1,0 +1,8 @@
+module DRAM_address_mux(output wire [15:0] outputmux,
+									input wire [15:0] inputmux1,
+									input wire [15:0] inputmux2,
+									input wire select);
+													 
+assign outputmux = select ? inputmux1:inputmux2;
+
+endmodule

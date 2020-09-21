@@ -1,0 +1,4 @@
+module Jump_controller(input wire Z_out,
+							  input wire [3:0] condition);
+							  
+endmodule

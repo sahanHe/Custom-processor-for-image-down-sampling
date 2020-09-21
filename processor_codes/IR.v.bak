@@ -1,0 +1,19 @@
+module IR(input clock,
+			input wire [7:0] IRAM_data,
+			output wire [3:0] opcode,
+			input wire read_enable);
+
+reg [7:0] instruction;
+assign opcode = instruction[3:0];
+
+initial
+begin
+instruction=8'b0;
+end	
+						
+always @(posedge read_enable)
+begin
+instruction=IRAM_data;
+end
+
+endmodule

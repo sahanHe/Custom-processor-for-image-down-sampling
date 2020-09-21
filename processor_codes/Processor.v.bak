@@ -1,0 +1,11 @@
+module Processor(output wire [7:0] IRAM_Address,
+					  input wire [7:0] IRAM_data,
+					  input wire clock,
+					  output wire [15:0] DRAM_address_processor,
+					  output wire [7:0] DRAM_output_data,
+					  input wire [7:0] DRAM_input_data,
+					  output wire write_DRAM,
+					  input wire enable_processor);
+					  
+endmodule
+					  

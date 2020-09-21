@@ -1,0 +1,12 @@
+module shift_registers(input wire [7:0] bus_to_SR1,
+							  output reg [7:0] SR1_to_bus,
+							  output reg [7:0] SR2_to_bus,
+							  output reg [7:0] SR3_to_bus);
+							  
+always@(bus_to_SR1)
+begin
+		SR3_to_bus <= SR2_to_bus;
+		SR2_to_bus <= SR1_to_bus;
+		SR1_to_bus <= bus_to_SR1;
+end
+endmodule

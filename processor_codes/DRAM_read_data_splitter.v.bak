@@ -1,0 +1,20 @@
+DRAM_read_data_splitter (output wire [7:0] output1,
+								 output wire [7:0] output2,
+								 input wire [7:0] inputsplitter,
+								 input wire select);
+													 
+case (select)
+
+0:
+begin
+assign output1 = inputsplitter;
+end
+
+1:
+begin
+assign output2 = inputsplitter;
+end
+
+endcase
+
+endmodule

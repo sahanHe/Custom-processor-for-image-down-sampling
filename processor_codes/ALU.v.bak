@@ -1,0 +1,44 @@
+module ALU(input wire [7:0] Bus,
+			  input wire [2:0] ALU_control,
+			  output reg [7:0] AC_to_bus,
+			  input wire clk);
+
+reg [7:0] AC;
+assign AC_to_bus = AC;
+
+initial
+begin
+AC = 8'b00000000;
+end
+			
+always @(posedge clk)
+begin
+	case(ALU_control)
+	3'b000:
+	begin
+		AC <= AC;
+	end
+	3'b001:
+	begin
+		AC <= AC+B;
+	end
+	3'b010:
+	begin
+		AC = AC-B;
+	end
+	3'b011:
+	begin
+		AC = 2*AC;
+	end
+	3'b100:
+	begin
+		AC<=IR_AC;
+	end
+	3'b101:
+	begin
+		AC<=RAM_AC;
+	end
+	endcase
+end
+
+endmodule

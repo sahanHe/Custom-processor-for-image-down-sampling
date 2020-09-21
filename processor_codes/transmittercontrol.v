@@ -1,0 +1,71 @@
+module transmittercontrol(input wire Rx,
+			  output wire Tx,
+			  input wire start_Tx,
+			  input wire clk,
+			  input wire [7:0] data_in,
+			  output wire [15:0] D_address,
+			  output wire[15:0] LEDR,
+			  output wire[7:0] LEDG,
+			  output wire Tx_done
+			  );
+wire tb;
+wire wr_en;
+reg en;
+reg Rx_ready;
+
+UART UART1(.data_in(data_in), //input data
+			  .wr_en(wr_en), //enable tx
+			  .clk(clk),
+			  .Tx(Tx),
+			  .Rx(Rx),
+			  .Tx_busy(tb),
+			  .data_out(data_out)
+				);
+reg busy;
+reg status3;
+reg [1:0] status2;
+
+reg [15:0]R_address;
+
+assign D_address=R_address;
+assign wr_en=en;
+assign LEDR=D_address;
+assign LEDG=data_out;
+assign Tx_done=status3;
+initial
+begin
+status3=0;
+status2=0;
+R_address=0;
+en=1;
+end
+
+always@(posedge clk)
+begin
+busy=tb;
+if(start_Tx && status2!=2'b10 && ~busy && R_address==0)
+begin
+en=0;
+
+status2=status2+1;
+//en=1;
+end
+
+if(start_Tx && status2==2'b10  && ~busy && R_address<65535 )
+begin
+R_address=R_address+1;
+en=0;
+if(R_address==65535)
+	begin
+	status3=1;
+	en=1;
+	end
+end
+
+/*if (status3==1 && ~busy)
+begin
+	en=1;
+end*/
+
+end
+endmodule

@@ -1,0 +1,25 @@
+module clock_selector(input clk_in,
+							input select clock,
+							output clk_out);
+
+output reg out;
+assign clk_out = out;
+wire c0;
+wire c1;
+
+m25 M(.inclk0(clk_in), .c0(c0));
+clock C(.clkin(clk_in), .clkout(c1));
+
+always@(in)
+begin
+
+if(in==1)
+	begin
+	out=c0;
+	end
+if (in==0)
+	begin
+	out=c1;
+	end
+end
+endmodule
