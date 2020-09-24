@@ -1,0 +1,3 @@
+Info (10281): Verilog HDL Declaration information at state_to_7seg.v(4): object "D0" differs only in case from object "d0" in the same scope File: D:/Education/5th Semester/Circuist Systems and Design/Processor Design/Processor/state_to_7seg.v Line: 4
+Info (10281): Verilog HDL Declaration information at state_to_7seg.v(5): object "D1" differs only in case from object "d1" in the same scope File: D:/Education/5th Semester/Circuist Systems and Design/Processor Design/Processor/state_to_7seg.v Line: 5
+Warning (10268): Verilog HDL information at transciever.v(86): always construct contains both blocking and non-blocking assignments File: D:/Education/5th Semester/Circuist Systems and Design/Processor Design/Processor/transciever.v Line: 86
