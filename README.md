@@ -10,3 +10,5 @@ Hardware
 >Altera DE2-115 development board
 
 How to use
+
+![Architecture of the processor](images/ARCHI.PNG)
