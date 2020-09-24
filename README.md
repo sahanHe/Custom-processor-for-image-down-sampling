@@ -12,7 +12,23 @@ Hardware
 
 How to use
 
->following diagrams shows the architecture, state diagram and datapath of the processor
+> Write the code using the instructions in the ISA
+
+>Convert it to the machine instructions using the given compiler
+
+>Save it to the instruction memory using Quartus software
+
+>Send the image using the matlab code and wait till the recieving is complete
+
+Performance
+
+>It takes around 2 minuts for the transmission
+
+>less than 1 second for the downsampling
+
+>ability to downsample maximum of 256x256x3 image
+
+following diagrams shows the architecture, state diagram and datapath of the processor
 
 ![Architecture of the processor](images/ARCHI.PNG)
 
