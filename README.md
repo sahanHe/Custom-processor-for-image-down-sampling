@@ -1,7 +1,7 @@
 # Custom-processor-for-image-down-sampling
 This repository contains a custom processor and an UART transceiver build using Verilog for the task of image downsampling
 
->>Prefer the report for more information
+>>Refer the report for more information
 
 Required Software
 >MATLAB
